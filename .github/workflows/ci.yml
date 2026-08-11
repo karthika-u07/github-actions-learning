@@ -8,5 +8,9 @@ on:
 jobs:
   python-ci:
     uses: karthika-u07/engineering-workflows/.github/workflows/python-ci.yml@main
+
     with:
       python-version: "3.11"
+
+    secrets:
+      training-secret: ${{ secrets.TRAINING_SECRET }}
