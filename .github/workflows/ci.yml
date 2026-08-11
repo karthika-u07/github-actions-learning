@@ -1,0 +1,10 @@
+name: Consumer CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  python-ci:
+    uses: karthika-u07/engineering-workflows/.github/workflows/python-ci.yml@main
