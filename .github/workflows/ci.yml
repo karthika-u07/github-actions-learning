@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
+
   python-ci:
     uses: karthika-u07/engineering-workflows/.github/workflows/python-ci.yml@main
 
@@ -14,3 +15,13 @@ jobs:
 
     secrets:
       training-secret: ${{ secrets.TRAINING_SECRET }}
+
+  show-result:
+    needs: python-ci
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show reusable workflow output
+        run: |
+          echo "Python version reported by reusable workflow:"
+          echo "${{ needs.python-ci.outputs.python-version-used }}"
