@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - name: Say hello
-        run: echo "Hello from GitHub Actions"
-
+        run: run: echo "Hello from GitHub Actions - PR test"
+        
       - name: Show runner
         run: |
           echo "OS: $RUNNER_OS"
