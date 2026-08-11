@@ -1,4 +1,4 @@
-name: Hello GitHub Actions
+name: GitHub Actions Jobs
 
 on:
   push:
@@ -6,15 +6,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  hello:
+
+  code-quality:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say hello
-        run: run: echo "Hello from GitHub Actions - PR test"
-        
-      - name: Show runner
-        run: |
-          echo "OS: $RUNNER_OS"
-          echo "Repository: $GITHUB_REPOSITORY"
-          echo "Ref: $GITHUB_REF" 
+      - name: Code quality check
+        run: echo "Running code quality checks"
+
+      - name: Show quality job
+        run: echo "This is the code-quality job"
+
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Security check
+        run: echo "Running security checks"
+
+      - name: Show security job
+        run: echo "This is the security job"
